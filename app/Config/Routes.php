@@ -37,6 +37,8 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/register', 'Home::register');
 $routes->get('/Login',    'Home::index');
+$routes->get('/user',    'Home::user');
+
 
 $routes->get('/... /..', '...::...');
 $routes->get('/... /..', '...::...');

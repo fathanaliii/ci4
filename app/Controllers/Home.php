@@ -12,4 +12,8 @@ class Home extends BaseController
     {
         return view('auth/v_register');
     }
+    public function user()
+    {
+        return view('user/v_index');
+    }
 }
