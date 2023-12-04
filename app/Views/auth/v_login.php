@@ -36,7 +36,7 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"><?= lang('Auth.loginTitle') ?></h1>
+                                        <h1 class="h4 text-gray-900 mb-4"><i class="fas fa-code text-primary"></i> <?= lang('Auth.loginTitle') ?></h1>
                                     </div>
 
                                     <?= view('Myth\Auth\Views\_message_block') ?>

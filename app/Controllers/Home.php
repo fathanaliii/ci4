@@ -6,14 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('auth/v_login');
-    }
-    public function register()
-    {
-        return view('auth/v_register');
-    }
-    public function user()
-    {
-        return view('user/v_index');
+        $data['title'] = 'Dashboard | Fathanalii';
+        return view('dashboard/v_dashboard', $data);
     }
 }

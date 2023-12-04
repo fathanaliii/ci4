@@ -27,17 +27,17 @@ class Admin extends BaseController
         return view('admin/v_index', $data);
     }
 
-    public function detail($id)
+    public function detail($id = 0)
     {
-        $data['title'] = 'User List | Fathanalii';
+        $data['title'] = 'User Detail | Fathanalii';
 
-        $this->builder->select('users.id as userid, username, email, name');
+        $this->builder->select('users.id as userid, username, email, fullname, user_image, name');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         $this->builder->where('users.id', $id );
         $query = $this->builder->get();
 
-        $data['users'] = $query->getRow();
+        $data['user'] = $query->getRow();
         return view('admin/v_detail', $data);
     }
 }

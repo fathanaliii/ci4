@@ -8,7 +8,17 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Fathanalii <sup>2</sup></div>
             </a>
+            <br>
 
+            <div class="sidebar-heading">
+                Dashboard
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('/'); ?>">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span></a>
+            </li>
             <?php if (in_groups('admin')) : ?>
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -20,9 +30,9 @@
 
                 <!-- Nav Item - Myprofile -->
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('admin');?>">
+                    <a class="nav-link" href="<?= base_url('admin'); ?>">
                         <i class="fas fa-user"></i>
-                        <span>My Profile</span></a>
+                        <span>Profile User</span></a>
                 </li>
 
                 <!-- Nav Item - Editprofile -->

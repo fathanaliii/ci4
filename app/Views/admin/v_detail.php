@@ -4,39 +4,42 @@
 <?= $this->section('page-content'); ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">User Detail</h1>
+    <h1 class="h3 mb-4 text-gray-800">Profile</h1>
     <div class="row">
         <div class="col-lg-8">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Action</th>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="<?= base_url('/img/' . $user->user_image); ?>" alt="<?= $user->fullname ?>" class="card-img-top p-2" height="200">
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h4><?= $user->username; ?></h4>
+                                </li>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($users as $user) : ?>
-                        <tr>
-                            <th scope="row"> <?= $i++; ?></th>
-                            <td><?= $user->username; ?></td>
-                            <td><?= $user->email; ?></td>
-                            <td><?= $user->name; ?></td>
-                            <td>
-                                <a href="<?= base_url('admin/ . $user->userid'); ?>" class="btn btn-info">Detail</a>
-                            </td>
+                                <?php if ($user->fullname) : ?>
+                                    <li class="list-group-item"><?= $user->fullname; ?></li>
+                                <?php endif; ?>
 
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                                <li class="list-group-item"><?= $user->email; ?></li>
+
+                                <li class="list-group-item">
+                                    <span class="badge badge-info"><?= $user->name; ?></span>
+                                </li>
+
+                                
+                                <li class="list-group-item">
+                                <small><a href="<?= base_url('admin');?>">&laquo; Back to user list</a></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
 <?= $this->endSection(); ?>
