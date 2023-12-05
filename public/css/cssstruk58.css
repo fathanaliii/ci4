@@ -1,0 +1,166 @@
+
+* {
+	font-size: 8px;
+    font-family: 'Times New Roman';
+}
+
+td,
+th,
+tr,
+table {
+    border-collapse: collapse;
+}
+
+td.description,
+th.description {
+  width: 150px;
+  max-width: 150px;
+}
+td.description2,
+th.description2 {
+	
+  width: 150px;
+  max-width: 150px;
+  word-break: break-all;
+}
+td.quantity,
+th.quantity {
+	
+  width: 75px;
+  max-width: 75px;
+  padding-left: 10px;
+  word-break: break-all;
+}
+
+td.price,
+th.price {
+
+  width: 75px;
+  max-width: 75px;
+  word-break: break-all;
+  text-align: right;
+}
+
+td.header,
+th.td.header {
+	border-bottom: 1px solid black;
+	font-size: 7px;
+  width: 50px;
+  max-width: 50px;
+  word-break: break-all;
+  text-align: left;
+}
+td.header2,
+th.td.header2 {
+border-bottom: 1px solid black;
+	font-size: 7px;
+  width: 50px;
+  max-width: 50px;
+  word-break: break-all;
+  text-align: left;
+}
+td.header3,
+th.td.header3 {
+	border-bottom: 1px solid black;
+	font-size: 7px;
+  width: 50px;
+  max-width: 50px;
+  word-break: break-all;
+  text-align: right;
+}
+
+td.total1,
+th.total1 {
+	
+  width: 75px;
+  max-width: 75px;
+  border-top: 1px solid black;
+  word-break: break-all;
+}
+
+td.total2,
+th.total2 {
+
+  width: 75px;
+  max-width: 75px;
+  border-top: 1px solid black;
+  word-break: break-all;
+  text-align: right;
+}
+td.bayar1,
+th.bayar1 {
+	
+  width: 75px;
+  max-width: 75px;
+  word-break: break-all;
+}
+
+td.bayar2,
+th.bayar2 {
+
+  width: 75px;
+  max-width: 75px;
+  word-break: break-all;
+  text-align: right;
+}
+td.kembali1,
+th.kembali1 {
+	
+  width: 75px;
+  max-width: 75px;
+  word-break: break-all;
+  border-bottom: 1px solid black;
+
+}
+
+td.kembali2,
+th.kembali2 {
+
+  width: 75px;
+  max-width: 75px;
+  word-break: break-all;
+  border-bottom: 1px solid black;
+  text-align: right;
+}
+td.footer1,
+th.footer1 {
+	
+  width: 50px;
+  max-width: 50px;
+  word-break: break-all;
+}
+
+td.footer2,
+th.footer2 {
+
+  width: 50px;
+  max-width: 50px;
+  text-align: right;
+  word-break: break-all;
+}td.footer2,
+th.footer2 {
+
+  width: 50px;
+  max-width: 50px;
+  word-break: break-all;
+}
+.centered {
+  text-align: center;
+  align-content: center;
+}
+
+.ticket {
+  width: 155px;
+  max-width: 155px;
+}
+
+img {
+  max-width: inherit;
+  width: inherit;
+}
+@media print {
+    .hidden-print,
+    .hidden-print * {
+        display: none !important;
+    }
+}

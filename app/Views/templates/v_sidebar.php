@@ -6,12 +6,12 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-code"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Fathanalii <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Fathanalii<sup>2</sup></div>
             </a>
             <br>
 
             <div class="sidebar-heading">
-                Dashboard
+                Master
             </div>
 
             <li class="nav-item">
@@ -34,14 +34,16 @@
                         <i class="fas fa-user"></i>
                         <span>Profile User</span></a>
                 </li>
-
-                <!-- Nav Item - Editprofile -->
-                <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-user-edit"></i>
-                        <span>Edit Profile</span></a>
-                </li>
             <?php endif; ?>
+            <div class="sidebar-heading">
+                Siswa
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('siswa'); ?>">
+                    <i class="fas fa-student"></i>
+                    <span>Data Siswa</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">

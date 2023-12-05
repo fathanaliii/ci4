@@ -4,18 +4,17 @@
 <?= $this->section('page-content'); ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">User List</h1>
-    <div class="row">
-        <div class="col-lg-8">
-            <table class="table table-bordered">
+<h1 class="h3 mb-4 text-gray-800">User</h1>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table style="width: 100%;" id="datauser" class="table table-bordered table-hover dataTable dtr-inline collapsed">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Action</th>
-
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +35,5 @@
             </table>
         </div>
     </div>
-
 </div>
-
 <?= $this->endSection(); ?>
