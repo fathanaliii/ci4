@@ -42,6 +42,9 @@ $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 $routes->get('/siswa', 'Siswa::index');
 $routes->post('/siswa/data', 'Siswa::listData');
 $routes->get('/siswa/tambah', 'Siswa::formtambah');
+$routes->get('/siswa/save', 'Siswa::save');
+
+
 
 
 /*

@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-lg">
-                    <form action="<?= base_url('pisau/save'); ?>" class="formtambah" method="post">
+                    <form action="<?= base_url('siswa/save'); ?>" class="formtambah" method="post">
 
                         <?= csrf_field() ?>
 
@@ -59,28 +59,21 @@
             success: function(response) {
                 if (response.error) {
                     let err = response.error;
-                    if (err.namapisau) {
-                        $('#namapisau').addClass('is-invalid');
-                        $('#msg-namapisau').html(err.namapisau);
+                    if (err.nipdsiswa) {
+                        $('#nipdsiswa').addClass('is-invalid');
+                        $('#msg-nipdsiswa').html(err.nipdsiswa);
 
                     } else {
-                        $('#namapisau').removeClass('is-invalid');
-                        $('#msg-namapisau').addClass('is-valid');
-                        $('#msg-namapisau').html('');
+                        $('#nipdsiswa').removeClass('is-invalid');
+                        $('#msg-nipdsiswa').addClass('is-valid');
+                        $('#msg-nipdsiswa').html('');
 
                     }
-                    if (err.ukuran) {
-                        $('#ukuran').addClass('is-invalid');
-                        $('#msg-ukuran').html(err.ukuran);
+                    if (err.namasiswa) {
+                        $('#namasiswa').addClass('is-invalid');
+                        $('#msg-ukuran').html(err.namasiswa);
                     }
-                    if (err.jumlahmata) {
-                        $('#jumlahmata').addClass('is-invalid');
-                        $('#msg-jumlahmata').html(err.jumlahmata);
-                    }
-                    if (err.bentangan) {
-                        $('#bentangan').addClass('is-invalid');
-                        $('#msg-bentangan').html(err.bentangan);
-                    }
+                    
                 } else {
                     Swal.fire({
                         icon: 'success',
@@ -88,7 +81,7 @@
                         text: response.sukses
                     });
                     $('#modaltambah').modal('hide');
-                    dataPisau.ajax.reload();
+                    dataSiswa.ajax.reload();
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {

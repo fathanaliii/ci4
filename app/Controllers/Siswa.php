@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ModdelDataSIswa;
 use App\Models\ModelDataSiswa;
+use App\Models\ModelSiswa;
 use Config\Services;
 
 class Siswa extends BaseController
@@ -65,4 +66,52 @@ class Siswa extends BaseController
     {
         return view('siswa/modaltambah');
     }
+
+    public function save()
+    {
+        $nipdsiswa     = $this->request->getVar('nipdsiswa');
+        $namasiswa        = $this->request->getVar('namasiswa');
+
+        $validation = \Config\Services::validation();
+
+        $valid = $this->validate([
+            'nipdsiswa'     => [
+                'rules'     => 'required',
+                'label'     => 'NIPD',
+                'errors'    => [
+                    'required'  => '{field} tidak boleh kosong',
+                ]
+            ],
+            'namasiswa'        => [
+                'rules'     => 'required',
+                'label'     => 'NAMA SISWA',
+                'errors'    => [
+                    'required'  => '{field} tidak boleh kosong',
+                ]
+            ],
+        ]);
+
+        if (!$valid) {
+            $error = [
+                'nipdsiswa'      => $validation->getError('nipdsiswa'),
+                'namasiswa'         => $validation->getError('namasiswa'),
+
+            ];
+
+            $json =  [
+                'error'  => $error
+            ];
+        } else {
+            $model = new ModelSiswa();
+            $model->insert([
+                'nipd'          => $nipdsiswa,
+                'nama_siswa'    => $namasiswa,
+            ]);
+            $json = [
+                'sukses' => 'Data  berhasi disimpan...'
+            ];
+        }
+        echo json_encode($json);
+    }
+
 }
