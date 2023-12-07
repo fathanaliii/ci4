@@ -71,7 +71,7 @@
                     }
                     if (err.namasiswa) {
                         $('#namasiswa').addClass('is-invalid');
-                        $('#msg-ukuran').html(err.namasiswa);
+                        $('#msg-namasiswa').html(err.namasiswa);
                     }
                     
                 } else {

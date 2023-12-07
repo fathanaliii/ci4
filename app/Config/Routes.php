@@ -31,20 +31,20 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-
 // $routes->get('/', 'Home::index');
+
 $routes->get('/', 'Home::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 
-
+//management data siswa
 $routes->get('/siswa', 'Siswa::index');
-$routes->post('/siswa/data', 'Siswa::listData');
+$routes->post('/siswa/data',  'Siswa::listData');
 $routes->get('/siswa/tambah', 'Siswa::formtambah');
-$routes->get('/siswa/save', 'Siswa::save');
-
-
+$routes->post('/siswa/save',  'Siswa::save');
+$routes->post('/siswa/edit',  'Siswa::formedit');
+$routes->post('/siswa/update','Siswa::update');
 
 
 /*

@@ -8,40 +8,38 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Fathanalii<sup>2</sup></div>
             </a>
-            <br>
-
-            <div class="sidebar-heading">
-                Master
-            </div>
-
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/'); ?>">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span></a>
-            </li>
+            <!-- Divider -->
             <?php if (in_groups('admin')) : ?>
-                <!-- Divider -->
                 <hr class="sidebar-divider">
 
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    User Management
+                <div class="sidebar-heading text-white">
+                    Master
                 </div>
 
-                <!-- Nav Item - Myprofile -->
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/'); ?>">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('admin'); ?>">
                         <i class="fas fa-user"></i>
-                        <span>Profile User</span></a>
+                        <span>Master User</span></a>
                 </li>
             <?php endif; ?>
-            <div class="sidebar-heading">
-                Siswa
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading text-white">
+                Managament Data 
             </div>
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('siswa'); ?>">
-                    <i class="fas fa-student"></i>
+                    <i class="fas fa-user-graduate"></i>
                     <span>Data Siswa</span></a>
             </li>
 

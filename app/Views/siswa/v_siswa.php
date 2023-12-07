@@ -12,16 +12,16 @@
 
 <!-- Page Heading -->
 <div class="container-fluid">
-<h1 class="h3 mb-4 text-gray-800">Data Siswa</h1>
+    <h1 class="h3 mb-4 text-gray-800">Management Data Siswa</h1>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="row">
-                <button type="button" class="btn btn-primary btnTambah">
+                <button type="button" class="btn btn-outline-primary btnTambah">
                     <i class="fas fa-plus"></i> Tambah Data
                 </button>
                 &nbsp;
-                <button type="button" class="btn btn-success btninfo">
-                    <i class="fas fa-question text-black"></i>
+                <button class="btn btn-outline-success" type="button" id="tombolotomatis" title="informasi" onclick="info()">
+                    <i class="fas fa-question"></i>
                 </button>
             </div>
             <hr>
@@ -31,7 +31,7 @@
                         <th style="width: 10%;">No</th>
                         <th>NIPD</th>
                         <th>NAMA SISWA</th>
-                        <th>Action</th>
+                        <th style="width: 15%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +44,42 @@
 <!-- modal --->
 <div class="viewmodal" style="display: none;"></div>
 <script>
+     function info() {
+        swal.fire(
+            'Informasi',
+            'Tabel berisi Data siswa',
+            'question'
+        )
+    }
+    function view(id) {
+        $.ajax({
+            type: "post",
+            url: "/siswa/viewdata",
+            data: {
+                id: id
+            },
+        });
+    }
+
+    function edit(id) {
+        $.ajax({
+            type: "post",
+            url: "/siswa/edit",
+            data: {
+                id: id
+            },
+            success: function(response) {
+                $('.viewmodal').html(response).show();
+                $('.viewmodal').html(response).show();
+                $('#modaledit').on('hidden.bs.modal', function(event) {
+                    $('#nipdsiswa').focus();
+                })
+                $('#modaledit').modal('show');
+            }
+        });
+    }
+
+
     $('.btnTambah').click(function(e) {
         e.preventDefault();
         $.ajax({

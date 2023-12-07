@@ -1,9 +1,10 @@
 <?= $this->extend('templates/v_index'); ?>
 <?= $this->section('page-content'); ?>
+
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">Selamat Datang <b class="text-primary"><?= user()->username; ?> !!!</b></h1>
     </div>
     <!-- Content Row -->
     <div class="row">
@@ -32,12 +33,12 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                .........
+                            <center><h3>siswa</h3></center>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. -</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> -</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-gift fa-2x text-success"></i>
+                            <i class="fas fa-user-graduate fa-2x text-success"></i>
                         </div>
                     </div>
                 </div>
