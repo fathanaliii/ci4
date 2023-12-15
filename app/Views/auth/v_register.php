@@ -33,7 +33,7 @@
               <div class="col-lg">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4"><?= lang('Auth.register') ?></h1>
+                    <h1 class="h4 text-gray-900 mb-4"><i class="fas fa-code text-primary"></i> <?= lang('Auth.register') ?></h1>
                   </div>
                   <?= view('Myth\Auth\Views\_message_block') ?>
                   <form action="<?= route_to('register') ?>" method="post" class="user">
@@ -41,7 +41,7 @@
 
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" <?php if (session('errors.email')) : ?>is-invalid<?php endif ?> name="email" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
-                      <small id="emailHelp" class="form-text text-muted"> <?= lang('Auth.weNeverShare') ?></small>
+                      <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
@@ -60,7 +60,7 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="<?= route_to('login') ?>"><?= lang('Auth.alreadyRegistered') ?> <?= lang('Auth.signIn') ?></a>
+                    <a class="small" href="<?= base_url('login') ?>"><?= lang('Auth.alreadyRegistered') ?> <?= lang('Auth.signIn') ?></a>
                   </div>
                 </div>
               </div>
@@ -70,8 +70,6 @@
       </div>
     </div>
   </div>
-
-
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url(); ?>/vendor/jquery/jquery.min.js"></script>

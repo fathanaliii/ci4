@@ -16,11 +16,11 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="row">
-                <button type="button" class="btn btn-outline-primary btnTambah">
-                    <i class="fas fa-plus"></i> Tambah Data
+                <button type="button" class="btn btn-primary btnTambah">
+                    <i class="fas fa-plus"></i> Tambah Data Siswa
                 </button>
                 &nbsp;
-                <button class="btn btn-outline-success" type="button" id="tombolotomatis" title="informasi" onclick="info()">
+                <button class="btn btn-success" type="button" id="tombolotomatis" title="informasi" onclick="info()">
                     <i class="fas fa-question"></i>
                 </button>
             </div>
@@ -47,7 +47,7 @@
      function info() {
         swal.fire(
             'Informasi',
-            'Tabel berisi Data siswa',
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quidem ad ex nostrum voluptates non quia expedita dolores, tempore quo minima dignissimos voluptatibus obcaecati possimus illum quas aliquid, minus at ?',
             'question'
         )
     }
@@ -79,6 +79,10 @@
         });
     }
 
+    function hapus()
+    {
+
+    }
 
     $('.btnTambah').click(function(e) {
         e.preventDefault();

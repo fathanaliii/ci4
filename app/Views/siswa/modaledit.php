@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <div class="text-center">
-                    <h5 class="h4 text-white">Edit Data</h5>
+                    <h5 class="h4 text-white">Edit Data Siswa</h5>
                 </div>
             </div>
             <div class="modal-body">
@@ -12,8 +12,14 @@
                     <?= form_open('/siswa/update', ['class' => 'formsimpan']); ?>
 
                     <div class="form-group">
+                        <label for=""></label>
+                        <input type="hidden" name="id" id="id" class="form-control" value="<?= $id; ?>" readonly="true">
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="">NIPD</label>
-                        <input type="text" name="nipdsiswa" id="nipdsiswa" class="form-control" value="<?= $nipdsiswa; ?>" readonly="true">
+                        <input type="text" name="nipdsiswa" id="nipdsiswa" class="form-control" value="<?= $nipdsiswa; ?>">
                         <div id="msg-nipdsiswa" class="invalid-feedback">
 
                         </div>
@@ -81,9 +87,8 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Berhasil..',
-                            text: response.sukses
+                            text: response.success
                         });
-
                         dataSiswa.ajax.reload();
                     }
                 },

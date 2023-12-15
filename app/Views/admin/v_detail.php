@@ -1,6 +1,4 @@
 <?= $this->extend('templates/v_index'); ?>
-
-
 <?= $this->section('page-content'); ?>
 
 <div class="container-fluid">
@@ -15,6 +13,7 @@
                     <div class="col-md-8 ">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
+
                                 <li class="list-group-item">
                                     <h4><?= $user->username; ?></h4>
                                 </li>
@@ -29,10 +28,10 @@
                                     <span class="badge badge-info"><?= $user->name; ?></span>
                                 </li>
 
-                                
                                 <li class="list-group-item">
                                 <small><a href="<?= base_url('admin');?>">&laquo; Back to user list</a></small>
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>

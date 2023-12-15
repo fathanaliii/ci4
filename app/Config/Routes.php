@@ -32,19 +32,26 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
+$routes->get('/', 'Home::data');
 
-$routes->get('/', 'Home::index');
+$routes->get('/dashboard', 'Home::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 
 //management data siswa
-$routes->get('/siswa', 'Siswa::index');
-$routes->post('/siswa/data',  'Siswa::listData');
-$routes->get('/siswa/tambah', 'Siswa::formtambah');
-$routes->post('/siswa/save',  'Siswa::save');
-$routes->post('/siswa/edit',  'Siswa::formedit');
-$routes->post('/siswa/update','Siswa::update');
+$routes->get('/siswa',          'Siswa::index');
+$routes->post('/siswa/data',    'Siswa::listData');
+$routes->get('/siswa/tambah',   'Siswa::formtambah');
+$routes->post('/siswa/save',    'Siswa::save');
+$routes->post('/siswa/edit',    'Siswa::formedit');
+$routes->post('/siswa/update',  'Siswa::update');
+$routes->post('/siswa/viewdata','Siswa::view');
+
+$routes->get('/utility','Utility::backupDB');
+
+
+
 
 
 /*

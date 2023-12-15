@@ -85,7 +85,7 @@
                                     <?php endif; ?>
                                     <?php if ($config->allowRegistration) : ?>
                                         <div class="text-center">
-                                            <a class="small" href="<?= url_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a>
+                                            <a class="small" href="<?= base_url('register') ?>"><?= lang('Auth.needAnAccount') ?></a>
                                         </div>
                                     <?php endif; ?>
 
@@ -94,11 +94,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript-->

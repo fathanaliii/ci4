@@ -38,15 +38,15 @@ class Siswa extends BaseController
                 $no++;
                 $row = [];
 
-                $tombolview = '<button type="button" class="btn btn-sm btn-outline-success" id="tombolview_' . $list->id . '" title="View Data"  onclick="view(\'' . $list->id . '\')">
+                $tombolview = '<button type="button" class="btn btn-sm btn-success" id="tombolview_' . $list->id . '" title="View Data"  onclick="view(\'' . $list->id . '\')">
                 <i class="fa fa-eye"></i>
                 </button>';
 
-                $tomboledit = '<button type="button" class="btn btn-sm btn-outline-primary" id="tomboledit_' . $list->id . '" title="Edit Data"  onclick="edit(\'' . $list->id . '\')">
+                $tomboledit = '<button type="button" class="btn btn-sm btn-primary" id="tomboledit_' . $list->id . '" title="Edit Data"  onclick="edit(\'' . $list->id . '\')">
                 <i class="fa fa-edit"></i>
                 </button>';
 
-                $tombolhapus = "<button type=\"button\" class=\"btn btn-sm btn-outline-danger\"  onclick=\"hapus('" . $list->id . "')\">
+                $tombolhapus = "<button type=\"button\" class=\"btn btn-sm btn-danger\"  onclick=\"hapus('" . $list->id . "')\">
                 <i class=\"fa fa-trash-alt \"></i>
                 </button>";
 
@@ -130,6 +130,7 @@ class Siswa extends BaseController
 
             if ($row) {
                 $data = [
+                    'id'            => $row['id'],
                     'nipdsiswa'     => $row['nipd'],
                     'namasiswa'     => $row['nama_siswa'],
                 ];
@@ -137,89 +138,69 @@ class Siswa extends BaseController
             }
         }
     }
-     function update()
+    public function update()
     {
-        $nipdsiswa      = $this->request->getVar('nipdsiswa');
-        $namasiswa      = $this->request->getVar('namasiswa');
+        $id        = $this->request->getVar('id');
+        $nipdsiswa = $this->request->getVar('nipdsiswa');
+        $namasiswa = $this->request->getVar('namasiswa');
 
         $validation = \Config\Services::validation();
 
         $valid = $this->validate([
-            'nipdsiswa'     => [
-                'rules'     => 'required',
-                'label'     => 'NIPD',
-                'errors'    => [
-                    'required'  => '{field} tidak boleh kosong',
+            'nipdsiswa' => [
+                'rules' => 'required',
+                'label' => 'NIPD',
+                'errors' => [
+                    'required' => '{field} tidak boleh kosong',
                 ]
             ],
-            'namasiswa'     => [
-                'rules'     => 'required',
-                'label'     => 'Nama Siswa',
-                'errors'    => [
-                    'required'  => '{field} tidak boleh kosong',
+            'namasiswa' => [
+                'rules' => 'required',
+                'label' => 'Nama Siswa',
+                'errors' => [
+                    'required' => '{field} tidak boleh kosong',
                 ]
             ],
         ]);
 
         if (!$valid) {
             $error = [
-                'nipdsiswa'      => $validation->getError('nipdsiswa'),
-                'namasiswa'      => $validation->getError('namasiswa'),
-
+                'nipdsiswa' => $validation->getError('nipdsiswa'),
+                'namasiswa' => $validation->getError('namasiswa'),
             ];
 
-            $json =  [
-                'error'  => $error
+            $json = [
+                'error' => $error
             ];
         } else {
             $model = new ModelSiswa();
-            $model->update([
-                
-                'nipd'          => $nipdsiswa,
-                'nama_siswa'    => $namasiswa,
+            $model->update($id, [
+                'nipd' => $nipdsiswa,
+                'nama_siswa' => $namasiswa,
             ]);
             $json = [
-                'sukses'        => 'Data  berhasil diupdate...'
+                'success' => 'Data berhasil diupdate...'
             ];
         }
         echo json_encode($json);
     }
-    function hapus(id) {
-        // SweetAlert for confirmation
-        Swal.fire({
-            title: 'Hapus',
-            text: 'Hapus Data ini?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, hapus!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'DELETE',
-                    url: '/pisau/delete/' + id, 
-                    data : {
-                        id : id
-                    },
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.sukses) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Berhasil',
-                                text: 'Data berhasil dihapus'
-                            });
-                        }
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        console.error(xhr.status, thrownError);
-                        alert('Failed to delete data. Check the console for details.');
-                    }
-                });
+
+    public function view($id)
+    {
+        if ($this->request->isAJAX()) {
+
+            $id         = $this->request->getPost('id');
+            $model      = new ModelSiswa();
+            $row        = $model->find($id);
+
+            if ($row) {
+                $data = [
+                    'id'            => $row['id'],
+                    'nipdsiswa'     => $row['nipd'],
+                    'namasiswa'     => $row['nama_siswa'],
+                ];
+                echo view('siswa/v_detail', $data);
             }
-        });
+        }
     }
 }
