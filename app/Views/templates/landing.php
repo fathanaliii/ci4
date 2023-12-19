@@ -9,7 +9,7 @@
 
     <!-- Teks Welcome -->
     <div class='welcome-text'>
-        <h1>Welcomeback -<span class="username-span" ><?= user()->username; ?> !</span></h1>
+        <h1>Welcome | <span class="username-span"><?= user()->username; ?> !</span></h1>
         <br>
         <a href="<?= base_url('dashboard'); ?>" class="btn btn-light">
             <i class="fas fa-play" style="color: blue;"></i>

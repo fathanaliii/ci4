@@ -3,10 +3,6 @@
 
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h3 class="h3 mb-0 text-gray-800">Selamat Datang : <b class="text-primary"><?= user()->username; ?> !!!</b></h3>
-    </div> -->
     <div class="container-fluid">
         <br>
         <!-- 404 Error Text -->
