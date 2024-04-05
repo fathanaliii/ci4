@@ -1,8 +1,6 @@
 <?= $this->extend('templates/v_index'); ?>
 
-
 <?= $this->section('page-content'); ?>
-
 <div class="container-fluid">
 <h1 class="h3 mb-4 text-gray-800">Master Data User</h1>
     <div class="card shadow mb-4">
@@ -26,9 +24,8 @@
                             <td><?= $user->email; ?></td>
                             <td><?= $user->name; ?></td>
                             <td>
-                                <a href="<?= base_url('admin/' . $user->userid); ?>" class="btn btn-info">Detail</a>
+                                <a href="<?= base_url('admin/' . $user->userid); ?>" class="btn btn-info">Settings</a>
                             </td>
-
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

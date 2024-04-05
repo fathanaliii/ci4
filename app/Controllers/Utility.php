@@ -8,7 +8,7 @@ class Utility extends BaseController
 {
     public function backupDB()
     {
-        $data['title'] = ' backupDB | Fathanalii';
+        $data['title'] = ' backupDB | warehouse';
         return view('utility/backupDB', $data);
     }
 }

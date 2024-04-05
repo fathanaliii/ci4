@@ -16,7 +16,7 @@ class Admin extends BaseController
     }
     public function index()
     {
-        $data['title'] = 'List User | Fathanalii';
+        $data['title'] = 'List User | warehouse';
 
         $this->builder->select('users.id as userid, username, email, name');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
@@ -29,7 +29,7 @@ class Admin extends BaseController
 
     public function detail($id = 0)
     {
-        $data['title'] = ' Profile User | Fathanalii';
+        $data['title'] = ' Profile User | warehouse';
 
         $this->builder->select('users.id as userid, username, email, fullname, user_image, name');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
