@@ -3,10 +3,10 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-code"></i>
+        <div class="sidebar-brand-icon">
+            <i class="fas fa-warehouse"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Fathanalii<sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3"><sup>GUDANG</sup></div>
     </a>
     <!-- Divider -->
     <?php if (in_groups('admin')) : ?>
@@ -17,7 +17,7 @@
         </div>
 
         <li class="nav-item <?= uri_string() == '' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('dashboard'); ?>">
+            <a class="nav-link" href="<?= base_url(''); ?>">
                 <i class="fas fa-home"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -37,17 +37,17 @@
         Management Data 
     </div>
 
-    <li class="nav-item <?= uri_string() == 'siswa' ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('siswa'); ?>">
-            <i class="fas fa-user-graduate"></i>
-            <span>Data Siswa</span></a>
+    <li class="nav-item <?= uri_string() == 'barang' ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('barang'); ?>">
+            <i class="fas fa-use"></i>
+            <span>Data Barang</span></a>
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <!-- <hr class="sidebar-divider"> -->
 
     <!-- Heading -->
-    <div class="sidebar-heading text-white">
+    <!-- <div class="sidebar-heading text-white">
         Utility 
     </div>
 
@@ -55,7 +55,7 @@
         <a class="nav-link" href="<?= base_url('utility'); ?>">
             <i class="fas fa-database"></i>
             <span>Backup DB</span></a>
-    </li>
+    </li> -->
 
 
     <!-- Divider -->
